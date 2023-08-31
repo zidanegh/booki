@@ -115,6 +115,8 @@ form {
   opacity: 1;
 }
 
+
+
 .icon-header {
   display: flex;
   justify-content: center;
@@ -141,47 +143,19 @@ form {
   margin-bottom: 35px;
   display: flex;
   align-items: center;
-  width: 758px;
-  height: 50px;
   gap: 15px;
-  font-size: 17px;
+  font-size: large;
   font-weight: 700;
 }
 
-.Économique {
+.Économique, .Familial, .Romantique, .Nos-pépites{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #d9d9d9;
   border-radius: 25px;
   gap: 10px;
-  padding: 4px 19px 4px 19px;
-}
-
-.Familial {
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid #d9d9d9;
-  border-radius: 25px;
-  gap: 10px;
-  padding: 4px 19px 4px 19px;
-}
-
-.Romantique {
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid #d9d9d9;
-  border-radius: 25px;
-  gap: 10px;
-  box-sizing: border-box;
-  padding: 4px 19px 4px 19px;
-}
-
-.Nos-pépites {
-  display: flex;
-  justify-content: space-around;
-  border: 2px solid #d9d9d9;
-  border-radius: 25px;
-  gap: 10px;
+  height: 50px;
   padding: 4px 19px 4px 19px;
 }
 
@@ -197,7 +171,7 @@ form {
   gap: 10px;
 }
 
-.border-i {
+.border-i-p i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +182,7 @@ form {
 }
 
 .border-i i {
-  font-size: small;
+  font-size: xx-small;
 }
 
 .hebergements h2 {
@@ -305,11 +279,10 @@ form {
   border-radius: 20px;
   box-shadow: 0px 3px 15px 0px #0000001a;
 }
-.card-activite a{
-               width: 100%;
-               text-decoration: none;
-               color: black;
-
+.card-activite a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
 }
 
 .activite {
@@ -446,10 +419,14 @@ form {
   margin-bottom: 5px;
 }
 
+
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
+
 /* Medium devices (tablets, less/equal than 1024px) */
+
+
 @media (max-width: 1024px) {
   .hebergements-and-populaires {
     flex-direction: column;
@@ -483,7 +460,90 @@ form {
   }
 }
 
+@media (min-width: 768px) {
+               .icon-recherche, .icon-recherche i {
+                              display: none;
+               }             
+}
+
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-  /* ... */
+  .main-container {
+    padding: 0px;
+  }
+  .logo-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 115px;
+    border-bottom: 2px solid #d9d9d9;
+    width: 100%;
+  }
+  .logo {
+    padding: 30px;
+    height: 79px;
+  }
+  .nav a {
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: medium;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  nav a:hover {
+    border-bottom: 2px solid #0065fc;
+    padding-top: 16px;
+    color: #0065fc;
+  }
+  .header_titre-form {
+    padding: 0px 20px;
+  }
+.button-recherche{ 
+               display: none;
+}
+
+.icon-recherche{
+               border:1px solid #0065fc;
+               background-color: #0065fc;
+               padding: 15px 16px;
+               border-radius: 15px;
+}
+.icon-recherche i{
+               color: #f2f2f2;
+}
+.filtres p{
+               width: 100%;
+}
+.filtres{
+               display: flex;
+               flex-direction: row;
+               flex-wrap: wrap;        
+               height: auto;
+               gap: 20px;
+               padding: 0px 20px;
+}
+.Économique, .Familial, .Romantique, .Nos-pépites {
+               width: 47%;
+}
+
+.border-i-p{
+               padding: 0px 20px;  
+}
+
+  .hebergements-and-populaires {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+    width: 100%;
+    
+  }
+  .hebergements-and-populaires section {
+               border-radius: 0px;
+  }
+section .hebergements{
+               background-color: white;}
 }
