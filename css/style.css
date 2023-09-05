@@ -100,15 +100,25 @@ form .submit-icon {
   display: none;
 }
 
-.form__input {
+.form-input {
   height: 49px;
   border: 1px solid #f2f2f2;
+  text-align: center;
+}
+
+form ::placeholder {
+  opacity: 1;
   font-size: large;
   font-weight: 700;
   color: #000;
-  opacity: 1;
+}
+::-webkit-input-placeholder {
+  text-align: center;
 }
 
+:-moz-placeholder {
+  text-align: center;
+}
 .icon-header {
   display: flex;
   justify-content: center;
@@ -134,10 +144,16 @@ form .submit-icon {
   margin-top: 35px;
   margin-bottom: 35px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 15px;
   font-size: large;
   font-weight: 700;
+}
+
+.filtre-list {
+  display: flex;
+  gap: 5px;
 }
 
 .Économique,
@@ -154,7 +170,7 @@ form .submit-icon {
   padding: 4px 19px 4px 19px;
 }
 
-.filtres div:hover {
+.filtre-list div:hover {
   background-color: #deebff;
 }
 
@@ -208,14 +224,18 @@ form .submit-icon {
   border-radius: 20px;
   padding: 0px 0px 15px 0px;
   box-shadow: 0px 3px 15px 0px #0000001a;
-  width: 250.33px;
+  width: 29%;
   height: 207.25px;
   gap: 4px;
 }
 
 .card-hebergements h4 {
-  font-size: 16px;
+  font-size: medium;
   font-weight: 700;
+}
+.card-hebergements p {
+  font-size: small;
+  font-weight: 400;
 }
 
 .hebergements {
@@ -223,6 +243,7 @@ form .submit-icon {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 30px;
   gap: 30px;
 }
@@ -233,6 +254,7 @@ form .submit-icon {
   color: black;
 }
 .hebergements h3 {
+font-size: large;
   font-weight: 700;
 }
 
@@ -272,8 +294,29 @@ form .submit-icon {
   color: var(--main-bg-color);
 }
 
+.activite {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+}
+
+.activite h2 {
+  height: 1em;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.activite .activite-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .card-activite {
-  width: 297.5px;
+  width: 23%;
   height: 439px;
   border: 0px;
   border-radius: 20px;
@@ -284,25 +327,9 @@ form .submit-icon {
   text-decoration: none;
   color: black;
 }
-
-.activite {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 30px;
-}
-
-.activite h2 {
-  width: 100%;
-  height: 1em;
-  font-size: 22px;
-  font-weight: 700;
-}
-
 .card-activite img {
   width: 100%;
-  height: 380px;
+  height: 85%;
   border: 1px;
   border-radius: 20px 20px 0px 0px;
   object-fit: cover;
@@ -310,7 +337,7 @@ form .submit-icon {
 
 .card-activite p {
   font-weight: 700;
-  font-size: 16px;
+  font-size: medium;
   padding: 20px 19px;
 }
 
@@ -386,6 +413,7 @@ form .submit-icon {
 .populaires-cards .card {
   display: flex;
   margin-top: 33px;
+  position: relative;
 }
 
 .populaires-cards .card-content {
@@ -409,6 +437,13 @@ form .submit-icon {
 .populaires-cards .card-rating {
   margin-bottom: 5px;
 }
+.lien-card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
@@ -420,7 +455,11 @@ form .submit-icon {
   .hebergements-and-populaires {
     flex-direction: column;
   }
-
+  .filtres {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
   .hebergements {
     width: 100%;
   }
@@ -436,7 +475,7 @@ form .submit-icon {
     justify-content: space-between;
   }
 
-  .populaires-cards .card {
+  .populaires-cards article {
     width: 30%;
   }
 
@@ -447,21 +486,23 @@ form .submit-icon {
   .populaires-cards .card-subtitle {
     font-size: 13px;
   }
-  .activite h2 {
-    width: 100%;
-  }
+
   .activite {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  .activite-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
   }
   .card-activite {
- 
-    height: auto;
+    height: 270px;
     width: 25%;
   }
   .card-activite img {
-    height: 270px;
+    height: 200px;
     width: 100%;
   }
 }
@@ -505,6 +546,14 @@ form .submit-icon {
   .submit-text {
     display: none;
   }
+  .form {
+    width: auto;
+  }
+  .form-input{
+               border-top-width: 50%;
+               width: 100%;
+               border-right: 0px;
+  }
   form .submit-icon {
     display: inline;
     color: #f2f2f2;
@@ -523,17 +572,21 @@ form .submit-icon {
   }
   .filtres {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: auto;
+    flex-direction: column;
     gap: 20px;
     padding: 0px 20px;
+  }
+  .filtre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   .Économique,
   .Familial,
   .Romantique,
   .Nos-pépites {
     width: 47%;
+    font-size: 0.9em;
   }
 
   .border-i-p {
@@ -547,7 +600,7 @@ form .submit-icon {
     display: flex;
     flex-direction: column-reverse;
     gap: 15px;
-    width: 100%;    
+    width: 100%;
   }
   .hebergements-and-populaires section {
     border-radius: 0px;
@@ -560,6 +613,7 @@ form .submit-icon {
     flex-direction: column;
     align-items: center;
   }
+
   .populaires .card {
     width: 100%;
   }
@@ -602,9 +656,15 @@ form .submit-icon {
   .footer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
-
+  .activite {
+    margin-bottom: 30px;
+  }
+  .activite-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
   .card-activite {
     width: 100%;
     height: 25%;
