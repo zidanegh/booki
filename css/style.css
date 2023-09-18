@@ -604,8 +604,8 @@ form ::placeholder {
   .Familial,
   .Romantique,
   .Nos-pépites {
-  flex: 1;
-    font-size: 0.8em;
+  width: 43%;
+    font-size: 0.7em;
   }
 .Économique i,
 .Familial i,
